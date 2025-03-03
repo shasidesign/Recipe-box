@@ -1,17 +1,10 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Box</title>
+    <title>Global Cafe</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 20px;
-            background-color: #f8f0e3;
-            color: #333;
-        }
-
         h1 {
             color: #8e44ad;
             text-align: center;
@@ -65,8 +58,8 @@
             color: #7f8c8d;
         }
 
-        .recipe p{
-            color:#7f8c8d;
+        .recipe p {
+            color: #7f8c8d;
         }
 
         #search-bar {
@@ -144,7 +137,6 @@
     </style>
 </head>
 <body>
-
     <h1>Global Cafe</h1>
 
     <input type="text" id="search-bar" placeholder="Search recipes..." />
@@ -192,118 +184,7 @@
         </div>
 
         <div class="recipe" id="recipe3">
-            <h2>Chicken Stir-Fry</h2>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1qvw12bzQ1XelX_NuvI0at2UYyPvxTu8Cdw&s" width="100" height="100">
-            <div class="ingredients">
-                <ul>
-                    <li>1 pound boneless, skinless chicken breasts, cut into bite-sized pieces</li>
-                    <li>1 tablespoon soy sauce</li>
-                    <li>1 tablespoon cornstarch</li>
-                    <li>2 tablespoons vegetable oil</li>
-                    <li>1 onion, sliced</li>
-                    <li>2 cloves garlic, minced</li>
-                    <li>1 red bell pepper, sliced</li>
-                    <li>1 green bell pepper, sliced</li>
-                    <li>1 cup broccoli florets</li>
-                </ul>
-            </div>
-            <p class="instructions">In a small bowl, combine chicken, soy sauce, and cornstarch. Heat vegetable oil in a large skillet over medium-high heat...</p>
-            <span class="favorite-btn">&#9733;</span>
-        </div>
-
-        <div class="recipe" id="recipe4">
-            <h2>Pancakes</h2>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2DT1D7fmBvlcxoe2rv6mjGd1yXj8WUS4YgQ&s" width="100" height="100">
-            <div class="ingredients">
-                <ul>
-                    <li>1 ½ cups all-purpose flour</li>
-                    <li>3 ½ teaspoons baking powder</li>
-                    <li>1 teaspoon salt</li>
-                    <li>1 tablespoon white sugar</li>
-                    <li>1 ¼ cups milk</li>
-                    <li>1 egg</li>
-                    <li>3 tablespoons melted butter</li>
-                </ul>
-            </div>
-            <p class="instructions">In a large bowl, whisk together flour, baking powder, salt, and sugar. In a separate bowl, whisk together milk, egg, and melted butter...</p>
-            <span class="favorite-btn">&#9733;</span>
-        </div>
-
-    </div>
-
-    <!-- Modal -->
-    <div id="recipe-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modal-title"></h2>
-            <div id="modal-ingredients"></div>
-            <p id="modal-instructions"></p>
-        </div>
-    </div>
-
-    <script>
-        // Toggle instructions visibility
-        const recipes = document.querySelectorAll('.recipe');
-        recipes.forEach(recipe => {
-            recipe.addEventListener('click', () => {
-                const instructions = recipe.querySelector('.instructions');
-                instructions.style.display = (instructions.style.display === 'none' || instructions.style.display === '') ? 'block' : 'none';
-            });
-        });
-
-        // Search functionality
-        const searchInput = document.getElementById('search-bar');
-        searchInput.addEventListener('input', function() {
-            const searchQuery = searchInput.value.toLowerCase();
-            recipes.forEach(recipe => {
-                const title = recipe.querySelector('h2').textContent.toLowerCase();
-                recipe.style.display = title.includes(searchQuery) ? 'block' : 'none';
-            });
-        });
-
-        // Modal Functionality
-        const modal = document.getElementById("recipe-modal");
-        const closeModal = document.querySelector(".close");
-
-        recipes.forEach(recipe => {
-            recipe.addEventListener("click", () => {
-                const title = recipe.querySelector("h2").textContent;
-                const ingredients = recipe.querySelector(".ingredients").innerHTML;
-                const instructions = recipe.querySelector(".instructions").textContent;
-
-                document.getElementById("modal-title").textContent = title;
-                document.getElementById("modal-ingredients").innerHTML = ingredients;
-                document.getElementById("modal-instructions").textContent = instructions;
-
-                modal.style.display = "block";
-            });
-        });
-
-        closeModal.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-
-        window.addEventListener("click", event => {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-
-        // Random Recipe Button
-        const randomRecipeButton = document.getElementById('random-recipe-btn');
-        randomRecipeButton.addEventListener('click', () => {
-            const randomRecipe = recipes[Math.floor(Math.random() * recipes.length)];
-            randomRecipe.scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Favorite Button Toggle
-        const favoriteButtons = document.querySelectorAll('.favorite-btn');
-        favoriteButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                button.classList.toggle('active');
-            });
-        });
-    </script>
+            <h2>Chicken Stir-F
 
 </body>
 </html>
